@@ -113,7 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
         case 'Ctrl-right':
           KEY_ELEMENT.classList.add('keyboard__key-ctrl-right');
           KEY_ELEMENT.textContent = 'Ctrl';
-          KEY_ELEMENT.addEventListener('click', () => {
+          KEY_ELEMENT.addEventListener('click', translate);
+          function translate() {
             const TEXT_BUTTONS = document.querySelectorAll('button');
             TEXT_BUTTONS.forEach((item) => {
               const HIDDEN_ELEMENTS = [
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.textContent = LANG[text];
               }
             });
-          });
+          }
           break;
 
         case 'Caps Lock':
